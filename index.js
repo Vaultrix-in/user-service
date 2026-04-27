@@ -13,7 +13,7 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
 const JWT_SECRET = process.env.JWT_SECRET || 'vaultrix-super-secret-key';
-const WALLET_URL = process.env.WALLET_SERVICE_URL || 'http://127.0.0.1:3003';
+const WALLET_URL = process.env.WALLET_SERVICE_URL || 'http://wallet-service:3003';
 const INTERNAL_SERVICE_TOKEN = process.env.INTERNAL_SERVICE_TOKEN || 'vaultrix-internal-token';
 const DEFAULT_SERVICE_BACKGROUND = 'https://images.openai.com/static-rsc-4/aMF6yfUacXWNU326dNEtZOm0Epe1hDm9ot18K-e8hLSVuXUFPwPGefc6ioebEyCOUvSfG1x15R5MWEoPeAsdck3B6FSgyzu9QnzibFNBgEF-M9sgzq25OA0ed0O6uxeru5nCuyt0-kBXsZZPxTuEqT9DRVfxFmIINIvquRdnNSd2Hk0XsZ_SyRVuVxYrjbpE?purpose=fullsize';
 
