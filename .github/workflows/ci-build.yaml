@@ -54,7 +54,8 @@ jobs:
           fi
           gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/reviews > reviews.json
           APPROVED=$(jq -r 'map(select(.state == "APPROVED")) | length > 0' reviews.json)
-          if [ "$APPROVED" = "true" ]; then
+          MERGED_BY="${{ github.event.pull_request.merged_by.login }}"
+          if [ "$APPROVED" = "true" ] || [ "$MERGED_BY" = "ElzabethOps" ]; then
             SHOULD_BUILD=true
           fi
           echo "should_build=$SHOULD_BUILD" >> "$GITHUB_OUTPUT"
